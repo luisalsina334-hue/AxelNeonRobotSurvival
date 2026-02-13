@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newlink: Axel Robot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui-overlay">
+            <div id="hud">
+                <div class="hud-item">Health: <div id="health-bar">
+                        <div id="health-fill"></div>
+                    </div>
+                </div>
+                <div class="hud-item">Score: <span id="score">0</span></div>
+                <div class="hud-item">Level: <span id="level">1</span></div>
+                <div class="hud-item">Enemies: <span id="enemies-left">0</span></div>
+            </div>
+            <div id="start-screen" class="screen active">
+                <img src="axel_logo.svg" alt="Axel Logo" id="game-logo">
+                <h1>NEWLINK: AXEL ROBOT</h1>
+                <p>WASD to Move | Mouse to Aim & Shoot</p>
+                <button id="start-btn">START MISSION</button>
+            </div>
+            <div id="game-over-screen" class="screen hidden">
+                <h1>SYSTEM FAILURE</h1>
+                <p>Mission Failed. Final Score: <span id="final-score">0</span></p>
+                <button id="restart-btn">REBOOT SYSTEM</button>
+            </div>
+            <div id="level-screen" class="screen hidden">
+                <h1 id="level-title">LEVEL 1</h1>
+                <p>Get Ready!</p>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+
+</html>
