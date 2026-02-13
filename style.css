@@ -1,0 +1,153 @@
+:root {
+    --primary-color: #00ffcc;
+    --secondary-color: #ff0066;
+    --bg-color: #0d0d15;
+    --ui-text-color: #ffffff;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    font-family: var(--font-family);
+    color: var(--ui-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    /* Optional: for crisp pixel art feel */
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Let clicks pass through to canvas */
+}
+
+/* Make interactable UI elements capture pointer events */
+#start-screen,
+#game-over-screen,
+button {
+    pointer-events: auto;
+}
+
+#hud {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
+}
+
+.hud-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#game-logo {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+}
+
+#health-bar {
+    width: 200px;
+    height: 20px;
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#health-fill {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+    transition: width 0.2s ease-out;
+}
+
+.screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(13, 13, 21, 0.9);
+    padding: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+}
+
+button:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+}
+
+button:active {
+    transform: scale(0.95);
+}
